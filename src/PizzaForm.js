@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
-import { Link, Route, useHistory } from 'react-router-dom'
-import axios from 'axios'
-import formSchema from './formSchema'
+import React, {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import formSchema from './formSchema';
 
 const defaultFormData = {
   'username': '',
@@ -59,6 +59,7 @@ export default function PizzaForm({setOrderedData}) {
     <div className='pizza-form'>
     <h2>Build Your Own Pizza!</h2> 
     <form>
+      <h3>Name and Size:</h3> 
       <label>Name:&nbsp;
         <input type='text'
                name='username'
@@ -100,7 +101,8 @@ export default function PizzaForm({setOrderedData}) {
                checked={formData.toppings.mushrooms}
                onChange={onCheckboxChange} />
       </label>
-      <label>Special Instructions: 
+      <h3>Special Instructions: </h3>
+      <label>Special Instructions:&nbsp;
         <input type='text'
                name='instructions'
                onChange={onInputChange}

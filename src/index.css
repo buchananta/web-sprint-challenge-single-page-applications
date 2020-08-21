@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-image: url('https://images.unsplash.com/photo-1531914082256-1b9047242426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&crop&w=1000&q=80');
+  color: white;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+h1 {
+  font-size: 3em;
+  letter-spacing: .1em;
+}
+
+a {
+  margin: 1em;
+  font-size: 1.3em;
+}
+
+.main {
+  text-align: center;
+}
+
+.pizza-form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+
+}
