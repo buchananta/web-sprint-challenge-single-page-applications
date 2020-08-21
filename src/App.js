@@ -19,7 +19,7 @@ const App = () => {
         <Link to={'/pizza'}>Make a Pizza!</Link>
       </section>
       </Route>
-      <Route path='{url}/pizza/'>
+      <Route path='/pizza'>
         <PizzaForm />
       </Route>
     </>
