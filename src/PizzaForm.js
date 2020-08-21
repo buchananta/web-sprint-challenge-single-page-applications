@@ -51,7 +51,6 @@ export default function PizzaForm({setOrderedData}) {
     const { name, value } = evt.target;
     throwErrors(name, value);
     inputChange(name, value);
-    console.log(formErrors);
   }
   useEffect(() => {
     formSchema.isValid(formData).then(valid => {
