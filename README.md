@@ -31,18 +31,21 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+  It takes the current route in the browser. I'm a little uncertain why it needs to be used instead of just './' However, it seems to work cohesively with react-router, while using './' doesn't maintain state?
 1. How would you explain form validation to someone who has never programmed before?
+  You use a library (yup) to create a schema, or basically, a file with a definition of what the data should look like in order to be accepted. You can then have the browser check the current form against that schema, it can then throw errors that can be displayed, or say the data is accepted.
 1. In 1-2 sentences, define end to end testing.
+  It's testing the functionality of the whole program/webpage all in one. Focusing on 'can the user perfom this task.' rather than anything lower level
 
 ## Instructions
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: `git checkout -b <firstName-lastName>`
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
 - [ ] Push commits: `git push origin <firstName-lastName>`
 
 ### Task 2: Project Requirements
