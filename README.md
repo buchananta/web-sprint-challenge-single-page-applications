@@ -31,7 +31,7 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
-  It takes the current route in the browser. I'm a little uncertain why it needs to be used instead of just './' However, it seems to work cohesively with react-router, while using './' doesn't maintain state?
+  It lets you specify a portion of a route and use it in Links and Route path='s. I'm a little uncertain why it needs to be used instead of just './' However, it seems to work cohesively with react-router, and doesn't depend at all on the current path like './'
 1. How would you explain form validation to someone who has never programmed before?
   You use a library (yup) to create a schema, or basically, a file with a definition of what the data should look like in order to be accepted. You can then have the browser check the current form against that schema, it can then throw errors that can be displayed, or say the data is accepted.
 1. In 1-2 sentences, define end to end testing.
