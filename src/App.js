@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { useRouteMatch, Link, Route } from 'react-router-dom';
 import PizzaForm from './PizzaForm';
+import Ordered from './Ordered';
 
 const App = () => {
+  const [orderedData, setOrderedData] = useState();
   let url = useRouteMatch();
   return (
     <>
@@ -20,7 +22,10 @@ const App = () => {
       </section>
       </Route>
       <Route path='/pizza'>
-        <PizzaForm />
+        <PizzaForm setOrderedData={setOrderedData} />
+      </Route>
+      <Route path='/ordered'>
+        <Ordered data={orderedData} />
       </Route>
     </>
   );

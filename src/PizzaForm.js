@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { Link, Route } from 'react-router-dom'
+import { Link, Route, useHistory } from 'react-router-dom'
+import axios from 'axios'
 
 const defaultFormData = {
   'username': '',
@@ -8,12 +9,22 @@ const defaultFormData = {
   'instructions': '',
 }
 
-export default function PizzaForm() {
+export default function PizzaForm({setOrderedData}) {
   const [formData, setFormData] = useState(defaultFormData)
+  const history = useHistory();
+  const submit = formData => {
+    axios.post('https://reqres.in/api/users', formData)
+      .then(res => {
+        console.log(res.data)
+        setOrderedData(res.data)
+      })
+      .catch(e => console.log('ERROR:' + e))
+  } 
 
   const onSubmit = evt => {
     evt.preventDefault()
-    //submit()
+    submit(formData)
+    history.push('/ordered')
   }
 
   const checkboxChange = (name, isChecked) => {
@@ -90,7 +101,7 @@ export default function PizzaForm() {
                value={formData.instructions}
         />
       </label>
-      <button>Submit Order!</button>
+      <button onClick={onSubmit} >Submit Order!</button>
     </form>
     </div>
   )
