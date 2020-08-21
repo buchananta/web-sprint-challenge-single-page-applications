@@ -18,6 +18,13 @@ describe('Form Tests', () => {
       )
     })
   })
+  describe('Can select size', () => {
+    it('select size small', () => {
+      cy.get('select')
+        .select('small')
+        .should('have.value', 'small')
+    })
+  })
   describe('Submitting Form', () => {
     it('submit button clickable', () => {
       cy.get('button').should('be.enabled')
