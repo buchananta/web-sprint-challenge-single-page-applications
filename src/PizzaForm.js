@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link, Route, useHistory } from 'react-router-dom'
 import axios from 'axios'
+import formSchema from './formSchema'
 
 const defaultFormData = {
   'username': '',
@@ -11,6 +12,7 @@ const defaultFormData = {
 
 export default function PizzaForm({setOrderedData}) {
   const [formData, setFormData] = useState(defaultFormData)
+  const [disabled, setDisabled] = useState(true)
   const history = useHistory();
   const submit = formData => {
     axios.post('https://reqres.in/api/users', formData)
@@ -47,7 +49,11 @@ export default function PizzaForm({setOrderedData}) {
     const { name, value } = evt.target
     inputChange(name, value)
   }
-
+  useEffect(() => {
+    formSchema.isValid(formData).then(valid => {
+      setDisabled(!valid);
+    })
+  }, [formData])
  
   return (
     <div className='pizza-form'>
@@ -101,7 +107,7 @@ export default function PizzaForm({setOrderedData}) {
                value={formData.instructions}
         />
       </label>
-      <button onClick={onSubmit} >Submit Order!</button>
+      <button disabled={disabled} onClick={onSubmit} >Submit Order!</button>
     </form>
     </div>
   )
